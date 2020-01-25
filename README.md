@@ -1,7 +1,7 @@
 # 4jmi-vue-webcomponents
 This is to demonstrate using Vue.js to create Web Components which make use of CoreUI, and can in turn be exposed for use by Angular, React, etc.
 
-The first three steps from the [from the following](https://medium.com/@royprins/get-started-with-vue-web-components-593b3d5b3200) were invaluable.
+The first three steps [from the following](https://medium.com/@royprins/get-started-with-vue-web-components-593b3d5b3200) were invaluable.
 
 ## Referencing the CoreUI/CSS
 You can obtain the necessary CoreUI files from [their CDN](https://coreui.io/docs/getting-started/download/#coreui-cdn).  However, a Web Component doesn't have access to the entire document's styles, so while you might reference the necessary .js in your index.html head section, you will need to do so otherwise from within each component.  
@@ -38,3 +38,7 @@ With regard to #3 above, it would be necessary to ensure that the Vue ref from t
   </div>
 </template>
 ```
+
+## Referencing the generated web component from HTML or other frameworks, i.e. React
+
+Step four from the [from the link at the very top](https://medium.com/@royprins/get-started-with-vue-web-components-593b3d5b3200) details how to create a distributable version of the web component; the minified version has been copied to /react-headless/ and its usage exemplified in that folder's vue-webcomponent-demo.html file

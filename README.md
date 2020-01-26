@@ -54,3 +54,12 @@ Step four from the [from the link at the very top](https://medium.com/@royprins/
 [This article](https://www.grapecity.com/blogs/using-web-components-with-react-2019) was very helpful in getting a headless React page to properly use the generated component from the dist folder.
 
 Please refer [to the following](https://cli.vuejs.org/guide/build-targets.html#bundle-that-registers-multiple-web-components) as to building *multiple* web components at once from Vue.
+
+## Challenge(s)
+
+The main challenge in using Vue-generated web components for usage by other components is that Vue's system of reactivity, including `watch` and directives typically used to respond to reactive changes, such as `v-if` and `v-for`, are not honored.  Web components do provide for a system of reactivity, first by declaring attributes/properties to listen for changes on with the `observedAttributes` and `attributeChangedCallback` methods, but these are not accounted for when Vue components are wrapped as web components.
+
+The `wrap` method used in index.js returns a constructor which should be able to be extended for adding these and other necessary methods.  This might in turn work fine for a production build, but in development the Vue component's `this` still refers to the Vue component, and not the generated web component.
+
+It might be possible to pass some functions into the web component as props, this is common practice in React for instance, for parents to pass methods down to children as properties.  This and/or other options need to be explored, one such being code generation; `vue run build` after all amounts to a code generator.
+

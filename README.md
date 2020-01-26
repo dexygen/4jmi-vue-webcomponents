@@ -43,4 +43,4 @@ With regard to #3 above, it would be necessary to ensure that the Vue ref from t
 
 Step four from the [from the link at the very top](https://medium.com/@royprins/get-started-with-vue-web-components-593b3d5b3200) details how to create a distributable version of the web component; the minified version has been copied to /react-headless/ and its usage exemplified in that folder's vue-webcomponent-demo.html file
 
-Please refer [to the following](https://cli.vuejs.org/guide/build-targets.html#bundle-that-registers-multiple-web-components) at to building *multiple* web components at once from Vue.
+Please refer [to the following](https://cli.vuejs.org/guide/build-targets.html#bundle-that-registers-multiple-web-components) as to building *multiple* web components at once from Vue.

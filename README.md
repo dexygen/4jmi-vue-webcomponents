@@ -1,7 +1,15 @@
 # 4jmi-vue-webcomponents
 This is to demonstrate using Vue.js to create Web Components which make use of CoreUI, and can in turn be exposed for use by Angular, React, etc.
 
-The first three steps [from the following](https://medium.com/@royprins/get-started-with-vue-web-components-593b3d5b3200) were invaluable.
+## Prerequisites
+The first three steps [from the following](https://medium.com/@royprins/get-started-with-vue-web-components-593b3d5b3200) were invaluable.  Before the first step above, and for the sake of completeness, please ensure you (already) have the following software installed and/or follow the necessary steps.  After cloning/extracting this project, on the command line from inside the "4jmi-vue-webcomponents" directory
+
+1. Node and NPM must be installed ahead of time (and on the path)
+2. Vue can then be installed: `npm install -g vue`
+3. Install vue-cli as per step one in the above article: `npm install -g @vue/cli`
+4. Having already cloned/extracted an existing project, then next step from the above article, "vue create web-component-project", may be skipped
+5. Then `npm install` will install necessary node modules
+6. `npm run serve` will launch the server and when ready will inform how to access it, e.g. http://localhost:8080/
 
 ## Referencing the CoreUI/CSS
 You can obtain the necessary CoreUI files from [their CDN](https://coreui.io/docs/getting-started/download/#coreui-cdn).  However, a Web Component doesn't have access to the entire document's styles, so while you might reference the necessary .js in your index.html head section, you will need to do so otherwise from within each component.  
@@ -25,7 +33,7 @@ mounted() {
 
 Things to note:
 1. The necessary stylesheet urls could be abstracted into an array and the corresponding script tags generated from that.
-2. Custom css files used especially for JMI styling for instance may need to be pre-concatenated
+2. Custom css files used especially for JMI styling for instance may need to be pre-concatenated/minified
 3. A `mounted` method such as the above could get moved into a mixin to get imported by all Vue-generated web components.
 
 With regard to #3 above, it would be necessary to ensure that the Vue ref from the component's template below, match with what is expected by a mixin's `mounted` method:
